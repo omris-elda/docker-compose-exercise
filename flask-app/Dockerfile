@@ -5,7 +5,7 @@ RUN apt-install python3 python3-pip
 # Copy contents into image
 COPY . .
 # run pip dependencies
-RUN pip3 install -r requirements.txt
+RUN pip3 install flask flask_sqlalchemy SQLAlchemy pymysql
 # Expose correct port
 EXPOSE 5000
 # Create an entrypoint
