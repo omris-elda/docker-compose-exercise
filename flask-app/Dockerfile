@@ -1,7 +1,7 @@
 # Use Python Image
 FROM python:3.7
 # Install apt dependencies
-RUN apt-install python3 python3-pip
+RUN apt-get python3 python3-pip
 # Copy contents into image
 COPY . .
 # run pip dependencies

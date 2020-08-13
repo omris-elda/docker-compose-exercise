@@ -20,7 +20,7 @@ services:
     - target: 5000
       published: 5000
     environment: 
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: flaskblog
     volumes:
     - type: volume
