@@ -5,4 +5,4 @@ ENV MYSQL_DATABASE database
 # Add the content of the .sql file to your image
 # All scripts in docker-entrypoint-initdb.d/ are automatically
 # executed during container startup
-COPY ./db/CreateTable.sql /docker-entrypoint-initdb.d/
+COPY . /docker-entrypoint-initdb.d/
