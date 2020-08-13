@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+  flask-app:
+    container_name: flask-app
+    image: flask-app
+    build: ./flask-app
+    ports:
+    - target: 5000
+      published: 5000
+    depends_on: 
+    - nginx
+    - database
+
+
+  database:
+    container_name: database
+    image: database
+    build: ./db
+    ports:
+    - target: 5000
+      published: 5000
+    environment: 
+    volumes:
+    - type: volume
+      source: flask-blog-data
+      target: /var/lib/mysql
+
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+
+
+volumes:
+  flask-blog-data:
