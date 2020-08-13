@@ -17,8 +17,8 @@ services:
     image: database
     build: ./db
     ports:
-    - target: 5000
-      published: 5000
+    - target: 3306
+      published: 3306
     environment: 
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: flaskblog
